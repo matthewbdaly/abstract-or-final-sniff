@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Matthewbdaly\AbstractOrFinalSniff\Sniffs;
+namespace Matthewbdaly\AbstractOrFinalClassesOnly\Sniffs;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
