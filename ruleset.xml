@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<ruleset name="Matthewbdaly\AbstractOrFinalSniff">
+     <description>Checks all classes are marked as either abstract or final.</description>
+ </ruleset>
