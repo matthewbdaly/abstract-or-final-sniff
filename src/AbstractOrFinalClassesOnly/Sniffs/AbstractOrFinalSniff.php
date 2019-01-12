@@ -14,6 +14,11 @@ final class AbstractOrFinalSniff implements Sniff
         T_ABSTRACT,
         T_FINAL,
     ];
+
+    private $fixer;
+
+    private $position;
+
     /**
      * @return int[]
      */
@@ -24,12 +29,21 @@ final class AbstractOrFinalSniff implements Sniff
 
     public function process(File $file, $position): void
     {
+        $this->fixer = $file->fixer;
+        $this->position = $position;
+
         if (!$file->findPrevious($this->tokens, $position)) {
             $file->addFixableError(
                 'All classes should be declared either "abstract" or "final"',
                 $position - 1,
                 self::class
             );
+            $this->fix();
         }
+    }
+
+    private function fix(): void
+    {
+        $this->fixer->addContent($this->position - 1, 'final ');
     }
 }
