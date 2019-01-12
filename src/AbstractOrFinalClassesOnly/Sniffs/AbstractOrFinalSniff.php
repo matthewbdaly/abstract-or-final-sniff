@@ -34,7 +34,7 @@ final class AbstractOrFinalSniff implements Sniff
 
         if (!$file->findPrevious($this->tokens, $position)) {
             $file->addFixableError(
-                'All classes should be declared either "abstract" or "final"',
+                'All classes should be declared using either the "abstract" or "final" keyword',
                 $position - 1,
                 self::class
             );

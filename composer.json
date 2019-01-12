@@ -1,7 +1,7 @@
 {
     "name": "matthewbdaly/abstract-or-final-sniff",
     "description": "A CodeSniffer sniff that requires that all classes be either abstract or final",
-    "type": "library",
+    "type": "phpcodesniffer-standard",
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.0@dev"
     },
