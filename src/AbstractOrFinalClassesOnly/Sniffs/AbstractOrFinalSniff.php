@@ -19,9 +19,6 @@ final class AbstractOrFinalSniff implements Sniff
 
     private $position;
 
-    /**
-     * @return int[]
-     */
     public function register(): array
     {
         return [T_CLASS];
