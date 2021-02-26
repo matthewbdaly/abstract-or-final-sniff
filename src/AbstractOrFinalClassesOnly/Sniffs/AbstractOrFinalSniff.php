@@ -29,13 +29,12 @@ final class AbstractOrFinalSniff implements Sniff
         $this->fixer = $file->fixer;
         $this->position = $position;
 
-        if (!$file->findPrevious($this->tokens, $position)) {
-            $file->addFixableError(
+        if (!$file->findPrevious($this->tokens, $position) && $file->addFixableError(
                 'All classes should be declared using either the "abstract" or "final" keyword',
                 $position - 1,
                 self::class
-            );
-            $this->fix();
+            )) {
+                $this->fix();
         }
     }
 
